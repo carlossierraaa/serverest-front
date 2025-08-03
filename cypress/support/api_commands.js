@@ -1,0 +1,16 @@
+Cypress.Commands.add('login_api', (usuario) => {
+    cy.request({
+        method: 'POST',
+        url: 'https://serverest.dev/login',
+        body: usuario,
+        headers: {
+            'Content-Type': 'application/json',
+            'Content-Type: application/json': 'application/json'    
+        }
+    }).then((response) => {
+        // Validação básica para garantir que o comando foi bem-sucedido
+        expect(response.status).to.eq(200);
+        return response.body;
+    });
+});
+
