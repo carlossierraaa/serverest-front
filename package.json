@@ -1,5 +1,19 @@
 {
   "devDependencies": {
-    "cypress": "^14.5.3"
-  }
+    "cypress": "^14.5.4",
+    "playwright-webkit": "^1.54.2"
+  },
+  "dependencies": {
+    "cypress-plugin-api": "^2.11.2"
+  },
+  "name": "serverest-front",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
