@@ -1,3 +1,4 @@
+
 Cypress.Commands.add('login_api', (usuario) => {
     cy.request({
         method: 'POST',
@@ -14,3 +15,18 @@ Cypress.Commands.add('login_api', (usuario) => {
     });
 });
 
+
+Cypress.Commands.add('cadastroUsuario', (usuario) => {
+    cy.request({
+        method: 'POST',
+        url: 'https://serverest.dev/usuarios',
+        body: usuario,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then((response) => {
+        // Validação básica para garantir que o comando foi bem-sucedido
+        expect(response.status).to.eq(201);
+        return response;
+    });
+});
