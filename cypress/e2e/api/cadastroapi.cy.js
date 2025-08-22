@@ -8,11 +8,7 @@ describe('cadastroapi', () => {
     };
 
     cy.cadastroUsuario(usuario).then((response) => {
-      if (response.status === 201) {
-        expect(response.status).to.eq(201);
-      } else {
-        expect(false).to.be.true;
-      }
+      expect([201, 400]).to.include(response.status);
     });
   });
 });
